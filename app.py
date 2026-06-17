@@ -7,7 +7,7 @@ st.set_page_config(page_title="Fashion Taxonomy AI", page_icon="👗", layout="w
 st.title("Fashion Taxonomy AI Analyzer")
 st.caption("Upload a fashion image to generate a complete taxonomy breakdown")
 
-api_key = st.secrets["GOOGLE_API_KEY"]
+api_key = st.secrets[""AQ.Ab8RN6KUXHiIq36nZH_I8QfjWYcj2HPuT7JuRkAwSkUtr4AHuwY"]
 genai.configure(api_key=api_key)
 
 PROMPT = """Analyze this fashion image in COMPLETE detail. Provide a structured taxonomy breakdown:
@@ -60,7 +60,7 @@ if uploaded_file is not None:
 
     with col2:
         with st.spinner("Analysing fashion taxonomy..."):
-            model = genai.GenerativeModel("gemini-1.5-flash")
+            model = genai.GenerativeModel("gemini-2.5-flash")
             response = model.generate_content([PROMPT, image])
             st.markdown(response.text)
 else:
